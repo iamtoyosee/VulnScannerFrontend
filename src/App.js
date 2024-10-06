@@ -1,24 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Inspector from './components/Inspector';
+import Login from './Authentication/Login';
+import Signup from './Authentication/Signup';
+import ForgotPassword from './Authentication/ForgotPassword'; // Placeholder for future
 
 function App() {
+  const [authenticated, setAuthenticated] = useState(false);
+
+  useEffect(() => {
+    // Check if user is already logged in
+    const token = localStorage.getItem('token');
+    if (token) {
+      setAuthenticated(true);
+    }
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="App">
+        <Routes>
+          {/* Conditional routing based on authentication */}
+          {!authenticated ? (
+            <>
+              <Route path="/login" element={<Login setAuthenticated={setAuthenticated} />} />
+              <Route path="/signup" element={<Signup />} />
+              <Route path="/forgot-password" element={<ForgotPassword />} />
+              <Route path="/" element={<Login setAuthenticated={setAuthenticated} />} />
+            </>
+          ) : (
+            <Route path="/" element={<Inspector />} />
+          )}
+        </Routes>
+      </div>
+    </Router>
   );
 }
 
