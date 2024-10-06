@@ -26,6 +26,10 @@ jobs:
           npm install
           npm run build
 
+      - name: Add EC2 to known hosts
+        run: |
+          ssh-keyscan -H 98.81.199.217 >> ~/.ssh/known_hosts
+
       - name: Sync Frontend Files
         run: |
           rsync -avz --delete ./build/ ec2-user@98.81.199.217:/var/www/VulnScannerFrontend
