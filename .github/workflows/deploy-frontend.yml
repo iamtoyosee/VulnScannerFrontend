@@ -32,7 +32,7 @@ jobs:
 
       - name: Sync Frontend Files
         run: |
-          rsync -avz --delete ./build/ ec2-user@98.81.199.217:/var/www/VulnScannerFrontend
+          rsync -avz --delete ./build/ ec2-user@98.81.199.217:/var/www/VulnScannerFrontend/build
 
       - name: Restart Nginx
         run: |
