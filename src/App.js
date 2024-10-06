@@ -21,7 +21,7 @@ function App() {
       <div className="App">
         <Routes>
           {/* Conditional routing based on authentication */}
-          {!authenticated ? (
+          {authenticated ? (
             <>
               <Route path="/login" element={<Login setAuthenticated={setAuthenticated} />} />
               <Route path="/signup" element={<Signup />} />
