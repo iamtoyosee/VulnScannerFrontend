@@ -4,6 +4,8 @@ import Inspector from './components/Inspector';
 import Login from './Authentication/Login';
 import Signup from './Authentication/Signup';
 import ForgotPassword from './Authentication/ForgotPassword'; // Placeholder for future
+import Dashboard from './pages/Dashboard';
+import StatsDashboard from './pages/StatsDashboard';
 
 function App() {
   const [authenticated, setAuthenticated] = useState(false);
@@ -29,7 +31,7 @@ function App() {
               <Route path="/" element={<Login setAuthenticated={setAuthenticated} />} />
             </>
           ) : (
-            <Route path="/" element={<Inspector />} />
+            <Route path="/" element={<Dashboard />} />
           )}
         </Routes>
       </div>

@@ -27,8 +27,8 @@ const AWSForm = ({ setResponseMessage, setLoading, setErrorMessage }) => {
 
   return (
     <div>
-      <h2 className="text-xl font-semibold mb-2">Set AWS Credentials</h2>
-      <form onSubmit={handleSetCredentials} className="space-y-4">
+      <h2 className="text-xl font-semibold mb-8">Set AWS Credentials</h2>
+      <form onSubmit={handleSetCredentials} className="space-y-8">
         <input
           type="text"
           placeholder="AWS Access Key"

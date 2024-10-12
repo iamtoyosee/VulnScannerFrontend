@@ -21,8 +21,8 @@ const SecurityGroupForm = ({ setResponseMessage, setLoading, setErrorMessage }) 
 
   return (
     <div>
-      <h2 className="text-xl font-semibold mb-2">Check EC2 Instance Security Groups</h2>
-      <form onSubmit={handleCheckSecurityGroups} className="space-y-4">
+      <h2 className="text-xl font-semibold mb-8">Check EC2 Instance Security Groups</h2>
+      <form onSubmit={handleCheckSecurityGroups} className="space-y-8">
         <input
           type="text"
           placeholder="EC2 Instance ID"
