@@ -17,7 +17,7 @@ const ContentArea = ({
   errorMessage
 }) => {
   return (
-    <div className="w-full h-[100vh] ml-60 p-16 bg-gray-100">
+    <div className="w-full ml-60 p-16 bg-transparent">
       {loading && <p className="text-blue-500">Loading...</p>}
       {errorMessage && <p className="text-red-500">{errorMessage}</p>}
       {responseMessage && <p className="text-green-500">{responseMessage}</p>}
