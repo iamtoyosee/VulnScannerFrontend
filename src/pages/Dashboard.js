@@ -28,7 +28,7 @@ const Dashboard = () => {
   const menuItems = ['Dashboard', 'EC2 Instances', 'Security Groups', 'Port Scanning', 'AWS Credentials'];
 
   return (
-    <div className="flex font-worksans bg-gray-900">
+    <div className="flex font-worksans bg-gray-900 min-h-screen ">
       {/* Sidebar */}
       <Sidebar
         menuItems={menuItems}

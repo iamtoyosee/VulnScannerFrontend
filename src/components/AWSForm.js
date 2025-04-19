@@ -28,6 +28,9 @@ const AWSForm = ({ setResponseMessage, setLoading, setErrorMessage }) => {
   return (
     <div>
       <h2 className="text-xl font-semibold mb-8">Set AWS Credentials</h2>
+      <div className="bg-red-300 p-4 my-4 box-border ">
+        <p className='font-bold'>Disclaimer</p>
+        <p>This program currently uses engineers set of default credentials for Demo purposes only. If you would like to test on your AWS environment, kindly enter you details below.</p></div>
       <form onSubmit={handleSetCredentials} className="space-y-8">
         <input
           type="text"

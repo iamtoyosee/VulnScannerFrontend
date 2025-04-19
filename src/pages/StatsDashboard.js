@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import StatsCards from '../components/StatsCards';
 import VulnerabilitiesTable from '../components/VulnerabilitiesTable';
+import { LineChart, Line } from 'recharts';
+
 
 const StatsDashboard = () => {
   const [stats, setStats] = useState({
@@ -22,6 +24,9 @@ const StatsDashboard = () => {
         awsAccounts: 3,
         vulnerabilities: 4,
       });
+
+      const data = [{name: 'Page A', uv: 400, pv: 2400, amt: 2400}];
+
 
       // Simulate vulnerabilities
       setVulnerabilities([
@@ -216,15 +221,20 @@ const StatsDashboard = () => {
         }
       ]);
       
+      
     }, 1000);
   }, []);
 
   return (
-    <div className="min-h-screen font-worksans">
+    <div className="font-worksans">
       <h1 className="text-4xl font-bold mb-16 text-center text-white">Cloud Security Dashboard</h1>
 
       {/* Stats Cards */}
       <StatsCards stats={stats} />
+{/* 
+      <LineChart width={400} height={400} data={data}>
+    <Line type="monotone" dataKey="uv" stroke="#8884d8" />
+  </LineChart> */}
 
       {/* Vulnerabilities Table */}
       <div className="mt-10">
