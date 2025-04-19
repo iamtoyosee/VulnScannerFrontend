@@ -25,7 +25,7 @@ const StatsDashboard = () => {
         vulnerabilities: 4,
       });
 
-      const data = [{name: 'Page A', uv: 400, pv: 2400, amt: 2400}];
+      // const data = [{name: 'Page A', uv: 400, pv: 2400, amt: 2400}];
 
 
       // Simulate vulnerabilities
