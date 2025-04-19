@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import StatsCards from '../components/StatsCards';
 import VulnerabilitiesTable from '../components/VulnerabilitiesTable';
-import { LineChart, Line } from 'recharts';
+// import { LineChart, Line } from 'recharts';
 
 
 const StatsDashboard = () => {
